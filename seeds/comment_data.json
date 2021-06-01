@@ -1,0 +1,14 @@
+[
+  {
+    "comment_text": "this is the first test comment",
+    "post_id": 1
+  },
+  {
+    "comment_text": "this is the second test comment",
+    "post_id": 2
+  },
+  {
+    "comment_text": "this is the third test comment",
+    "post_id": 3
+  }
+]
