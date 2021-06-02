@@ -6,6 +6,11 @@ const withAuth = (req, res, next) => {
       next();
     }
   };
-  
+  // {{#if logged_in}}
+  //       <a href="/newPost">profile</a> |
+  //       <button type ="button" class="btn btn-secondary" id="logout">logout</button>
+  //       {{else}}
+  //       <a href="/login">login</a>
+  //       {{/if}}
   module.exports = withAuth;
   
