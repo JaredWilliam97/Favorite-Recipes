@@ -1,9 +1,16 @@
 main {
-  background: -webkit-linear-gradient(
+  /* border: solid 5px black;
+  margin-bottom: 30px;
+  background-image: url(./img/hollywoodsign.jpg);
+  background-repeat: no-repeat;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover; */
+  /* background: -webkit-linear-gradient(
     to right,
     rgba(166, 192, 254, 0.5),
     rgba(246, 128, 132, 0.5)
-  );
+  ); */
 }
 
 nav {
