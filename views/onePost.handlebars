@@ -1,2 +1,15 @@
 {{> postInfo post }}
 {{> comments post.comments}}
+
+<div class="card">
+    <h3 class="card-header"></h3>
+    <form class="card-body commentForm" id="commentForm">
+
+        <label class="form-label">Comment</label>
+        <input id="comment" name="commenBody" class="formInput" />
+
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+
+{{!-- needs javascript for comment submit --}}
