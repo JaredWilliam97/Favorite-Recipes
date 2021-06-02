@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
     
     })
     if (response.ok) {
-    document.location.replace('/profile'); //takes to the users profile page with their info and blogs
+    document.location.replace('/post'); 
     
     }
     else{
@@ -44,7 +44,7 @@ const loginFormHandler = async (event) => {
     })
     
     if (response.ok){
-    document.location.replace ('/newPost');
+    document.location.replace ('/');
 }
 else {
 alert(response.statusText);
