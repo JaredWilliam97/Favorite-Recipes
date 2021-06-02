@@ -11,10 +11,10 @@ nav {
 }
 
 footer {
-  position: absolute;
+  /* position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; */
 
   margin-top: 20px;
   background-color: #111;
