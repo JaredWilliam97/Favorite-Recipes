@@ -9,8 +9,31 @@
         <input id="comment" name="commenBody" class="formInput" />
 
         <button type="submit" class="btn">Submit</button>
+                
+
     </form>
 </div>
+<div>
+    <button type="button" id="editPostBtn" class="btn">Edit</button>
+        <button type="button" class="deletePostBtn" class="btn">Delet</button>
+
+</div>
+
 
 {{!-- needs javascript for comment submit --}}
-<script src="/JS/newComment.js"></script>
+<script src="/JS/deletePost.js"></script>
+
+
+<script>
+
+   function redirect () {
+      
+       document.location.replace("/api/posts/editPost")
+   }
+
+document.querySelector("#editPostBtn").addEventListener("click", redirect);
+
+
+</script>
+{{!-- needs javascript for comment submit --}}
+<script src="/JS/newComment.js">
