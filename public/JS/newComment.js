@@ -10,6 +10,7 @@ async function newFormHandler(event) {
     method: "POST",
     body: JSON.stringify({
       comment,
+      post_id: id,
     }),
     headers: {
       "Content-Type": "application/json",
