@@ -1,9 +1,10 @@
 const router = require("express").Router();
-const { Post, Comment } = require("../models");
-//const withAuth = require('../utils/auth');
+const { Post, Comment, User} = require("../models");
+const sequelize = require("../config/connection");
+const withAuth = require('../utils/auth');
 
 //need to put in router.get
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Post.findAll({
     attributes: ["id", "title", "content", "created_at"],
     include: [
@@ -50,6 +51,13 @@ router.get("/post/:id", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("login");
 });
 
 module.exports = router;
