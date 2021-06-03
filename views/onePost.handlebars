@@ -6,7 +6,7 @@
     <form class="card-body commentForm" id="commentForm">
 
         <label class="form-label">Comment</label>
-        <input id="comment" name="commenBody" class="formInput" />
+        <input id="comment" name="commentBody" class="formInput" />
 
         <button type="submit" id="commentBtn" class="btn">Submit</button>
                 
@@ -36,19 +36,6 @@
 
 {{!-- needs javascript for delete post --}}
 <script src="/JS/deletePost.js"></script>
-
-
-<script>
-
-   function redirect () {
-      
-       document.location.replace("/api/posts/editPost")
-   }
-
-document.querySelector("#editPostBtn").addEventListener("click", redirect);
-
-
-</script>
 
 {{!-- needs javascript for comment submit --}}
 <script src="/JS/newComment.js"></script>
