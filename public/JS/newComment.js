@@ -1,5 +1,5 @@
 async function newFormHandler(event) {
-  event.preventDefault();
+  // event.preventDefault();
 
   console.log("trying to add a new comment");
 
