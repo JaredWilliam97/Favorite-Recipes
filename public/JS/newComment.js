@@ -1,16 +1,21 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const comment = document.querySelector("#comment").value;
-  const id = window.location.toString().split("/")[
+  console.log("trying to add a new comment");
+
+  const comment_text = document
+    .querySelector('input[name="commentBody"]')
+    .value.trim();
+  const post_id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
+  console.log("Post id is: " + post_id);
 
-  const response = await fetch(`/api/comments/${id}`, {
+  const response = await fetch(`/api/comments`, {
     method: "POST",
     body: JSON.stringify({
-      comment,
-      post_id: id,
+      post_id,
+      comment_text,
     }),
     headers: {
       "Content-Type": "application/json",
@@ -18,7 +23,7 @@ async function newFormHandler(event) {
   });
 
   if (response.ok) {
-    document.location.replace("/");
+    document.location.reload();
   } else {
     alert(response.statusText);
   }
