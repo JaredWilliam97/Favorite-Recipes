@@ -62,3 +62,13 @@ document.querySelector("#editPostBtn").addEventListener("click", redirect);
 <script src="/JS/editPost.js"></script>
 <script src="/JS/deletePost.js"></script>
 {{!-- needs javascript for comment submit --}}
+
+{{!-- needs javascript for comment submit --}}
+<script src="/JS/newComment.js"></script>
+<script>
+    function redirect () {
+        document.location.replace('/api/posts/comments')
+
+    }
+    document.querySelector("#commentBtn").addEventListener('click', redirect)
+</script>
