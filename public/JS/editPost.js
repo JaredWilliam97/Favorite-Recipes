@@ -6,9 +6,9 @@ async function editForm(event) {
   console.log(title);
   console.log(content);
 
-  // const id = window.location.toString().split("/")[
-  //   window.location.toString().split("/").length - 1
-  // ];
+  const id = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
 
   const response = await fetch(`/api/posts/${id}`, {
     method: "PUT",
@@ -23,10 +23,10 @@ async function editForm(event) {
   });
 
   if (response.ok) {
-    document.location.replace("/");
+    document.location.replace(`/post/${id}`);
   } else {
     alert(response.statusText);
   }
 }
 
-document.querySelector("#editPostBtn").addEventListener("cLick", editForm);
+document.querySelector(".editPostBtn").addEventListener("click", editForm);
