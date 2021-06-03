@@ -8,7 +8,7 @@
         <label class="form-label">Comment</label>
         <input id="comment" name="commenBody" class="formInput" />
 
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" id="commentBtn" class="btn">Submit</button>
                 
 
     </form>
@@ -34,6 +34,31 @@
   </form>
 </div>
 
+{{!-- needs javascript for delete post --}}
+<script src="/JS/deletePost.js"></script>
+
+
+<script>
+
+   function redirect () {
+      
+       document.location.replace("/api/posts/editPost")
+   }
+
+document.querySelector("#editPostBtn").addEventListener("click", redirect);
+
+
+</script>
+
+{{!-- needs javascript for comment submit --}}
+<script src="/JS/newComment.js"></script>
+<script>
+    function redirect () {
+        document.location.replace('/api/posts/comments')
+
+    }
+    document.querySelector("#commentBtn").addEventListener('click', redirect)
+</script>
 <script src="/JS/editPost.js"></script>
 <script src="/JS/deletePost.js"></script>
-{{!-- needs javascript for comment submit --}}
+
