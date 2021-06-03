@@ -4,7 +4,7 @@ const sequelize = require("../config/connection");
 const withAuth = require('../utils/auth');
 
 //need to put in router.get
-router.get("/", withAuth, (req, res) => {
+router.get("/", (req, res) => {
   Post.findAll({
     attributes: ["id", "title", "content", "created_at"],
     include: [
