@@ -14,11 +14,25 @@
     </form>
 </div>
 <div>
-    <button type="button" id="editPostBtn" class="btn">Edit</button>
-        <button type="button" class="deletePostBtn" class="btn">Delet</button>
+        <button type="button" class="deletePostBtn btn" class="btn">Delete</button>
 
 </div>
 
+<div class="card">
+  <h3 class="card-header">Edit Post</h3>
+  <form class="card-body editPostForm">
+    <label class="form-label">Title</label>
+    <input type="text" name="post-title" value="{{post.title}}" class="form-input" />
+    <label class="form-label" for="content">Content</label>
+    <input
+      name="content"
+      type="text"
+      value="{{post.content}}"
+      class="form-input"
+    />
+    <button type="button" class="editPostBtn btn" >Update</button>
+  </form>
+</div>
 
 {{!-- needs javascript for delete post --}}
 <script src="/JS/deletePost.js"></script>
@@ -45,3 +59,6 @@ document.querySelector("#editPostBtn").addEventListener("click", redirect);
     }
     document.querySelector("#commentBtn").addEventListener('click', redirect)
 </script>
+<script src="/JS/editPost.js"></script>
+<script src="/JS/deletePost.js"></script>
+{{!-- needs javascript for comment submit --}}
