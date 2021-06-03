@@ -17,4 +17,26 @@ router.post("/", (req, res) => {
     });
 });
 
+//DELETE
+router.delete("/:id", (req, res) => {
+  console.log("entered delete route");
+
+  Comment.destroy({
+    where: {
+      id: req.body.id,
+    },
+  })
+    .then((data) => {
+      if (!data) {
+        res.status(404).json({ message: "No post found with this id" });
+        return;
+      }
+      res.json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;
