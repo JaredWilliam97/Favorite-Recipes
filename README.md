@@ -14,9 +14,12 @@ Usage
 ![Login/signup](assets/images/Loginandsignuppage.PNG)
 ![newpost](assets/images/createnewpost.PNG)
 ![comment/edit/delete](assets/images/Comments-edits-deletes.PNG)
-
+[link to heroku](https://murmuring-river-43433.herokuapp.com/)
 
 
 Credits
 
 Lisa Barton, Peter Bishop, Kevin Wesley, Jared Sutch.
+
+New Library used:
+[github link](https://github.com/WeiChiaChang/easter-egg-collection)
