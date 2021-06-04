@@ -3,13 +3,25 @@
     <div class="card">
       <h3 class="card-header"></h3>
       <section class="card-body">
-        <div class="text">
+        <input type="text" name="commentID" value="{{id}}" class="form-input" />
+
+        <div class="text" name="commentText">
           {{comment_text}}
         </div>
         <div class="meta">
           {{format_date created_at}}
         </div>
+        <div>
+          <button
+            type="button"
+            class="deleteCommentBtn btn"
+            class="btn"
+          >Delete</button>
+
+        </div>
       </section>
     </div>
   {{/each}}
 </div>
+
+<script src="/JS/deleteComment.js"></script>
