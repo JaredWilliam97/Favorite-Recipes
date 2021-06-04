@@ -12,7 +12,7 @@ async function deleteComment(event) {
 
   const comment_id = this.id;
 
-  console.log(comment_id);
+  // console.log(comment_id);
 
   // console.log("deleting comment at ID: " + id);
 
