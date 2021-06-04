@@ -10,6 +10,16 @@ Usage
 
 - We used Node.js and Express.js to create a RESTful API. We used Handlebars.js as the template engine. WE used MySQL and the Sequelize ORM for the database. We used GET and POST routes for retrieving and adding new data. We used a library where it show's emojis pass the screen when logging in. We used the folder structure using the MVC paradigm which made it easy to organize everything. We included authentication using express-session and cookies. We deployed this app using Heroku. Our user interface is sleek and made user friendly.
 
+![homepage](assets/images/homepage.PNG)
+![Login/signup](assets/images/Loginandsignuppage.PNG)
+![newpost](assets/images/createnewpost.PNG)
+![comment/edit/delete](assets/images/Comments-edits-deletes.PNG)
+[link to heroku](https://murmuring-river-43433.herokuapp.com/)
+
+
 Credits
 
 Lisa Barton, Peter Bishop, Kevin Wesley, Jared Sutch.
+
+New Library used:
+[github link](https://github.com/WeiChiaChang/easter-egg-collection)
