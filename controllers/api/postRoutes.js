@@ -13,6 +13,7 @@ router.get("/editpost", (req, res) => {
   res.render("editPost");
 });
 
+
 router.get("/post/:id", (req, res) => {
   Post.findOne({
     where: {

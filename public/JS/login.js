@@ -44,7 +44,7 @@ const loginFormHandler = async (event) => {
     })
     
     if (response.ok){
-    document.location.replace ('/');
+    document.location.replace ('/api/posts/newposts');
 }
 else {
 alert(response.statusText);
