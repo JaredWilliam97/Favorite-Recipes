@@ -1,6 +1,6 @@
 const sequelize = require("../../config/connection");
 const router = require("express").Router();
-const { Post } = require("../../models");
+const { Post, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 //RETRIEVE
 router.get("/newpost", (req, res) => {
@@ -41,18 +41,35 @@ router.get("/post/:id", (req, res) => {
     });
 });
 
+//
+
 //CREATE
 router.post("/", withAuth, (req, res) => {
-  Post.create({
-    title: req.body.title,
-    content: req.body.content,
-    name: req.body.name,
+  // QUERY USER TABLE
+  // PULL NAME OUT OF OBJ
+  User.findOne({
+    where: {
+      id: req.session.user_id,
+    },
   })
-    .then((data) => res.json(data))
+    .then((userData) => {
+      Post.create({
+        title: req.body.title,
+        content: req.body.content,
+        name: userData.name,
+      })
+        .then((data) => res.json(data))
+        .catch((err) => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+      console.log(userData.name);
+    })
     .catch((err) => {
       console.log(err);
-      res.status(500).json(err);
     });
+
+  res.send("ok");
 });
 
 //UPDATE
