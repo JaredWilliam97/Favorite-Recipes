@@ -5,13 +5,16 @@ async function deleteComment(event) {
     window.location.toString().split("/").length - 1
   ];
 
-  const comment_id = document
-    .querySelector('input[name="commentID"]')
-    .value.trim();
+  // const comment_id = document
+  //   .querySelector('input[name="commentID"]')
+  //   .value.trim();
+  //   console.log(this)
 
-  console.log("comment ID: " + comment_id);
+  const comment_id = this.id;
 
-  console.log("deleting comment at ID: " + id);
+  // console.log(comment_id);
+
+  // console.log("deleting comment at ID: " + id);
 
   const response = await fetch(`/api/comments/${comment_id}`, {
     method: "DELETE",
@@ -30,6 +33,7 @@ async function deleteComment(event) {
   }
 }
 
-document
-  .querySelector(".deleteCommentBtn")
-  .addEventListener("click", deleteComment);
+let deleteCommentBtn = document.querySelectorAll(".deleteCommentBtn");
+deleteCommentBtn.forEach((btn) => {
+  btn.addEventListener("click", deleteComment);
+});

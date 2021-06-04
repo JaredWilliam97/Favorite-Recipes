@@ -1,7 +1,7 @@
 const sequelize = require("../../config/connection");
 const router = require("express").Router();
 const { Post } = require("../../models");
-// const withAuth = require('../utils/auth');
+const withAuth = require("../../utils/auth");
 //RETRIEVE
 router.get("/newpost", (req, res) => {
   console.log("Getting new Post");
@@ -18,7 +18,7 @@ router.get("/post/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "content", "title", "created_at"],
+    attributes: ["id", "content", "title", "name", "created_at"],
     include: [
       {
         model: Comment,
@@ -42,10 +42,11 @@ router.get("/post/:id", (req, res) => {
 });
 
 //CREATE
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
     content: req.body.content,
+    name: req.body.name,
   })
     .then((data) => res.json(data))
     .catch((err) => {
@@ -55,7 +56,7 @@ router.post("/", (req, res) => {
 });
 
 //UPDATE
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   Post.update(
     {
       title: req.body.title,
