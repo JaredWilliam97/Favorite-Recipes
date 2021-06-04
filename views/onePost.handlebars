@@ -2,36 +2,54 @@
 {{> comments post.comments}}
 
 <div class="card">
-    <h3 class="card-header"></h3>
+    <h3 class="card-header">Comment Here</h3>
+    <div class="form-group col-md-10 offset-1">
     <form class="card-body commentForm" id="commentForm">
 
-        <label class="form-label">Comment</label>
-        <input id="comment" name="commentBody" class="formInput" />
+        <label class="form-control">Comments:</label>
+        <input id="comment" name="commentBody" class="formInput form-control" rows="5"/>
 
-        <button type="submit" id="commentBtn" class="btn">Submit</button>
+        <button type="submit" id="commentBtn" class="btn btn-dark mt-2">Submit</button>
                 
-
-    </form>
 </div>
-<div>
+    </form>
+    
+</div>
+{{!-- <div>
         <button type="button" class="deletePostBtn btn" class="btn">Delete</button>
 
-</div>
+</div> --}}
 
 <div class="card">
   <h3 class="card-header">Edit Post</h3>
   <form class="card-body editPostForm">
-    <label class="form-label">Title</label>
-    <input type="text" name="post-title" value="{{post.title}}" class="form-input" />
-    <label class="form-label" for="content">Content</label>
+    <div class="form-group col-md-10 offset-1">
+    <label class="form-control">Title:</label>
+
+
+
+
+
+    <input type="text" name="post-title" value="{{post.title}}" class="form-control" rows="5"/>
+    </div>
+    <div class="form-group col-md-10 offset-1">
+    <label class="form-control" for="content">Content:</label>
     <input
+    rows="5"
       name="content"
       type="text"
       value="{{post.content}}"
-      class="form-input"
+      class="form-control"
     />
-    <button type="button" class="editPostBtn btn" >Update</button>
+    <button type="button" class="editPostBtn btn btn-dark mt-2" >Update</button>
   </form>
+
+</div>
+</div>
+<div>
+  <h3 class="card-header">Delete Post</h3>
+        <button type="button" class= "form-group col-md-1 offset-1 deletePostBtn btn btn-dark">Delete</button>
+
 </div>
 
 {{!-- needs javascript for delete post --}}
