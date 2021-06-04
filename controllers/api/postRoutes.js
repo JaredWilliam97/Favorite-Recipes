@@ -51,25 +51,19 @@ router.post("/", withAuth, (req, res) => {
     where: {
       id: req.session.user_id,
     },
-  })
-    .then((userData) => {
-      Post.create({
-        title: req.body.title,
-        content: req.body.content,
-        name: userData.name,
-      })
-        .then((data) => res.json(data))
-        .catch((err) => {
-          console.log(err);
-          res.status(500).json(err);
-        });
-      console.log(userData.name);
+  }).then((userData) => {
+    Post.create({
+      title: req.body.title,
+      content: req.body.content,
+      name: userData.name,
     })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  res.send("ok");
+      .then((data) => res.json(data))
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+    console.log(userData.name);
+  });
 });
 
 //UPDATE
