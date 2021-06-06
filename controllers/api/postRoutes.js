@@ -47,15 +47,15 @@ router.get("/post/:id", (req, res) => {
 router.post("/", withAuth, (req, res) => {
   // QUERY USER TABLE
   // PULL NAME OUT OF OBJ
-  // User.findOne({
-  //   where: {
-  //     id: req.session.user_id,
-  //   },
-  // }).then((userData) => {
+  User.findOne({
+    where: {
+      id: req.session.user_id,
+    },
+  }).then((userData) => {
   Post.create({
     title: req.body.title,
     content: req.body.content,
-    // name: userData.name,
+    name: userData.name,
   })
     .then((data) => res.json(data))
     .catch((err) => {
@@ -64,7 +64,7 @@ router.post("/", withAuth, (req, res) => {
     });
   // console.log(userData.name);
 });
-
+})
 //UPDATE
 router.put("/:id", withAuth, (req, res) => {
   Post.update(
